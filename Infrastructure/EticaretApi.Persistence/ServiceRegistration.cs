@@ -17,7 +17,7 @@ namespace EticaretApi.Persistence
         public static void AddPersistenceServices(this IServiceCollection services)
         {
             services.AddDbContext<EticaretDbContext>(options =>
-                options.UseSqlServer("Server=DESKTOP-7P5OTV2\\SQLEXPRESS;Database=EticaretDB;Trusted_Connection=True;TrustServerCertificate=True"));
+                options.UseSqlServer("Server=DESKTOP-T5SD4LD\\SQLEXPRESS;Database=EticaretDB;Trusted_Connection=True;TrustServerCertificate=True"));
 
                 //customer and product repositories for db context and persistence services
 

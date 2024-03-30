@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EticaretApi.Persistence.Migrations
 {
     [DbContext(typeof(EticaretDbContext))]
-    [Migration("20240330112415_migration2")]
-    partial class migration2
+    [Migration("20240330114550_InitialCreateProject")]
+    partial class InitialCreateProject
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

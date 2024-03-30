@@ -14,7 +14,7 @@ namespace EticaretApi.Persistence
         {
             //create
             DbContextOptionsBuilder<EticaretDbContext> dbContextOptionsBuilder = new();
-            dbContextOptionsBuilder.UseSqlServer("Server=DESKTOP-7P5OTV2\\SQLEXPRESS;Database=EticaretDB;Trusted_Connection=True;TrustServerCertificate=True");
+            dbContextOptionsBuilder.UseSqlServer("Server=DESKTOP-T5SD4LD\\SQLEXPRESS;Database=EticaretDB;Trusted_Connection=True;TrustServerCertificate=True");
             return new EticaretDbContext(dbContextOptionsBuilder.Options);
         }
     }
