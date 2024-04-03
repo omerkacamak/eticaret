@@ -53,7 +53,7 @@ namespace EticaretApi.Persistence.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Carts");
+                    b.ToTable("Carts", (string)null);
                 });
 
             modelBuilder.Entity("EticaretApi.Domain.Entities.CartItem", b =>
@@ -103,7 +103,7 @@ namespace EticaretApi.Persistence.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("CartItems");
+                    b.ToTable("CartItems", (string)null);
                 });
 
             modelBuilder.Entity("EticaretApi.Domain.Entities.Category", b =>
@@ -135,7 +135,7 @@ namespace EticaretApi.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("EticaretApi.Domain.Entities.Order", b =>
@@ -178,7 +178,7 @@ namespace EticaretApi.Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("EticaretApi.Domain.Entities.OrderItem", b =>
@@ -229,7 +229,7 @@ namespace EticaretApi.Persistence.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("EticaretApi.Domain.Entities.Product", b =>
@@ -280,7 +280,7 @@ namespace EticaretApi.Persistence.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("EticaretApi.Domain.Entities.ProductImage", b =>
@@ -317,7 +317,7 @@ namespace EticaretApi.Persistence.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductImages");
+                    b.ToTable("ProductImages", (string)null);
                 });
 
             modelBuilder.Entity("EticaretApi.Domain.Entities.User", b =>
@@ -376,7 +376,7 @@ namespace EticaretApi.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("EticaretApi.Domain.Entities.Cart", b =>

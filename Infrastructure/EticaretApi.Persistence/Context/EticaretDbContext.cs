@@ -15,21 +15,6 @@ namespace EticaretApi.Persistence.Context
 
         }
 
-        //onmodel creating
-        // protected override void OnModelCreating(ModelBuilder modelBuilder)
-        // {
-        //     // cart and user relation 1-1
-        //     modelBuilder.Entity<Cart>()
-        //         .HasOne(c=>c.User)
-        //         .WithOne(u => u.Cart)
-        //         .HasForeignKey<Cart>(c => c.UserId)
-        //         .OnDelete(DeleteBehavior.NoAction);
-                
-
-            
-
-        // }
-        
 
 
         public DbSet<Category> Categories { get; set; }
@@ -40,5 +25,36 @@ namespace EticaretApi.Persistence.Context
         public DbSet<Cart> Carts { get; set; }
         public DbSet<CartItem> CartItems { get; set; }
         public DbSet<User> Users { get; set; }
+
+
+        //add savechangesasync interceptor
+
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            foreach (var entry in ChangeTracker.Entries<BaseEntity>().ToList())
+            {
+                switch (entry.State)
+                {
+                    case EntityState.Added:
+                        entry.Entity.CreatedAt = DateTime.Now;
+                        entry.Entity.CreatedBy = "sistem";
+                        break;
+
+                    case EntityState.Modified:
+                        entry.Entity.CreatedAt = DateTime.Now;
+                        entry.Entity.UpdatedBy = "sistem";
+                        break;
+
+                }
+
+            }
+            return base.SaveChangesAsync(cancellationToken);
+
+        }
+
+
+        
+
+
     }
 }
